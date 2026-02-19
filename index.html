@@ -20,7 +20,11 @@ h2{color:var(--primary);border-bottom:2px solid var(--primary);display:inline-bl
 .card{background:var(--card);padding:20px;margin:15px 0;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.12);transition:.3s}
 .card:hover{transform:none}
 ul{padding-left:20px}
-.grid{display:flex;flex-direction:column;gap:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.cert-grid{display:flex;gap:25px;overflow-x:auto;padding:20px 5px;scroll-snap-type:x mandatory}
+.cert-grid::-webkit-scrollbar{height:8px}
+.cert-grid::-webkit-scrollbar-thumb{background:var(--primary);border-radius:10px}
+.cert-card{min-width:320px;max-width:320px;scroll-snap-align:start}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
 .gallery img{width:100%;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.2);transition:.3s}
 .gallery img:hover{transform:scale(1.05)}
@@ -65,7 +69,7 @@ footer{text-align:center;padding:20px;background:var(--primary);color:white}
 
 <section id="projects">
 <h2>Projects</h2>
-<div class="grid">
+<div class="cert-grid">
 <div class="card">
 <h3>Crop Cart (Mar 2025)</h3>
 <ul>
@@ -95,13 +99,13 @@ footer{text-align:center;padding:20px;background:var(--primary);color:white}
 </section>
 
 <section id="certificates">
-<h2>Certificates & Proof</h2>
+<h2>Certificates & Achievements</h2>
 <div class="grid">
-  <div class="card"><h3>GDG Agentathon</h3><img class="cert" src="Hack2skill-Certificate.png" onclick="openCert(this.src)"></div>
-  <div class="card"><h3>Java Certification</h3><img class="cert" src="Hack2skill-Certificate.png" onclick="openPDF('Java-Certificate.pdf')"></div>
-  <div class="card"><h3>Frontend Development</h3><img class="cert" src="Hack2skill-Certificate.png" onclick="openPDF('Frontend Development-Certificate.pdf')"></div>
-  <div class="card"><h3>AI Skills Passport</h3><img class="cert" src="Hack2skill-Certificate.png" onclick="openPDF('EY_CERTIFICATION.pdf')"></div>
-  <div class="card"><h3>AI + Sustainability Internship</h3><img class="cert" src="Hack2skill-Certificate.png" onclick="openPDF('Completion Certificate _ SkillsBuild.pdf')"></div>
+  <div class="cert-card card"><h3>GDG Agentathon</h3><img class="cert" src="Hack2skill-Certificate.png" style="width:100%;border-radius:10px;cursor:pointer" onclick="openCert(this.src)"></div>
+  <div class="cert-card card"><h3>Java Certification</h3><img class="cert" src="profile.jpg" style="width:100%;border-radius:10px;cursor:pointer" onclick="openPDF('Java-Certificate.pdf')"></div>
+  <div class="cert-card card"><h3>Frontend Development</h3><img class="cert" src="profile.jpg" style="width:100%;border-radius:10px;cursor:pointer" onclick="openPDF('Frontend Development-Certificate.pdf')"></div>
+  <div class="cert-card card"><h3>AI Skills Passport</h3><img class="cert" src="profile.jpg" style="width:100%;border-radius:10px;cursor:pointer" onclick="openPDF('EY_CERTIFICATION.pdf')"></div>
+  <div class="cert-card card"><h3>AI + Sustainability Internship</h3><img class="cert" src="profile.jpg" style="width:100%;border-radius:10px;cursor:pointer" onclick="openPDF('Completion Certificate _ SkillsBuild.pdf')"></div>
 </div>
 </section>
 
